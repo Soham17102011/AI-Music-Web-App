@@ -1,11 +1,12 @@
 song1 = "music.mp3";
 song2 = "music2.mp3";
+song1_status = "";
+song2_status = "";
 leftWristX = 0;
 leftWristY = 0;
 rightWristX = 0;
 rightWristY = 0;
 scoreLeftWrist = 0;
-songPlayed = "";
 
 function preload() {
     song1 = loadSound("music.mp3")
@@ -43,7 +44,8 @@ function gotPoses(results) {
 
 function draw() {
     image(video, 0, 0, 600, 500)
-    songPlayed = song1.isPlaying();
+    song1_status = song1.isPlaying();
+    song2_status = song2.isPlaying();
     if (scoreLeftWrist > 0.2) {
         fill('#FC6A03');
         stroke('#FC6A03');
@@ -57,7 +59,8 @@ function draw() {
 }
 
 function play() {
-    song1.play();
-    song1.setVolume(1);
+    song_name.play();
+    song_name.setVolume(1);
+    song_name.rate(1);
 
 }
