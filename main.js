@@ -46,12 +46,13 @@ function draw() {
     image(video, 0, 0, 600, 500)
     song1_status = song1.isPlaying();
     song2_status = song2.isPlaying();
+    fill('#FC6A03');
+    stroke('#FC6A03');
     if (scoreLeftWrist > 0.2) {
-        fill('#FC6A03');
-        stroke('#FC6A03');
+
         circle(leftWristX, leftWristY, 20);
         song2.stop();
-        if (songPlayed = false) {
+        if (song1_status == false) {
             song1.play();
             document.getElementById("song_name").innerHTML = "Song Playing: Peter Pan";
         }
